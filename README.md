@@ -6,6 +6,6 @@ This function returns a string of concatenated values with an optional seperator
 
 `Combine(WorkRng As Range, Optional Sign As String = ",", Optional IgnoreEmpty As Boolean = True) As String`
 
-*WorkRng* - The range of cells you want concatenated 
-*Sign* - The delimeter you want to use [default = ',']
-*IgnoreEmpty* - Whether or not you want to ignore blank cells [default = True]
+- *WorkRng* - The range of cells you want concatenated 
+- *Sign* - The delimeter you want to use [default = ','] 
+- *IgnoreEmpty* - Whether or not you want to ignore blank cells [default = True] 
