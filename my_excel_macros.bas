@@ -2,9 +2,10 @@ Function Combine(WorkRng As Range, Optional Sign As String = ",", Optional Ignor
     'This function combines text with a delimeter provided
     Dim Rng As Range
     Dim OutStr As String
+    OutStr = ""
     For Each Rng In WorkRng
         If IgnoreEmpty Then
-            If Rng.Text <> "," And Len(Rng.Text) > 1 Then
+            If Rng.Text <> "," And Not IsEmpty(Rng) Then
                 OutStr = OutStr & Rng.Text & Sign
             End If
         Else
@@ -13,6 +14,9 @@ Function Combine(WorkRng As Range, Optional Sign As String = ",", Optional Ignor
             End If
         End If
     Next
-    Combine = Left(OutStr, Len(OutStr) - 1)
+    If Len(OutStr) = 0 Then
+        Combine = OutStr
+    Else
+        Combine = Left(OutStr, Len(OutStr) - 1)
+    End If
 End Function
-
